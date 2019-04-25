@@ -6,6 +6,6 @@ Array.from(send).forEach(function(element){
     console.log('This is your source ', src)
     // takes in key[think properties] & value
     localStorage.setItem('arImg', src);
-    window.location.href = '/camera'
+    window.location.href = 'https://marker-rc.herokuapp.com/camera'
   })
 })
