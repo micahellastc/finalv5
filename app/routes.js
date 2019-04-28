@@ -8,7 +8,7 @@ module.exports = function(app, passport, db, multer, ObjectId, Design, mkdirp, f
 
 
   // Camera SECTION =========================
-  app.get('/camera', isLoggedIn, function(req, res) {
+  app.get('/camera', function(req, res) {
     db.collection('designs').find().toArray((err, result) => {
       if (err) return console.log(err)
       res.render('camera.ejs', {
@@ -17,6 +17,7 @@ module.exports = function(app, passport, db, multer, ObjectId, Design, mkdirp, f
       })
     })
   });
+  
   // CHOSEN DESIGN INFO AND TRY BUTTON ===============
   app.get('/artist/:artist', function(req, res) {
     db.collection('users').findOne({"local.email": req.params.artist}, (err, user) => {
